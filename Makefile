@@ -6,7 +6,7 @@
 #    By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/15 10:37:28 by elhampto          #+#    #+#              #
-#    Updated: 2019/03/04 21:23:56 by elhampto         ###   ########.fr        #
+#    Updated: 2019/03/07 04:00:13 by elhampto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,6 @@ ft_strchr.c\
 ft_striter.c\
 ft_strncat.c\
 ft_strsplit.c\
-ft_wordcount.c\
 ft_isdigit.c\
 ft_memcpy.c\
 ft_putendl_fd.c\
@@ -36,7 +35,6 @@ ft_strncpy.c\
 ft_strsub.c\
 ft_atoi.c\
 ft_itoa.c\
-ft_itoa_base.c\
 ft_memmove.c\
 ft_putnbr_fd.c\
 ft_strcpy.c\
@@ -72,6 +70,10 @@ ft_strcat.c\
 ft_strequ.c\
 ft_strmapi.c\
 ft_strrchr.c\
+atoc.c\
+ft_itoa_base.c\
+ft_wordcount.c\
+is_space.c\
 
 INC = libft.h
 
@@ -90,8 +92,6 @@ ft_lstdelone.o\
 ft_lstiter.o\
 ft_lstmap.o\
 ft_lstnew.o\
-ft_itoa_base.o\
-ft_wordcount.o\
 ft_putendl_fd.o\
 ft_strclr.o\
 ft_striteri.o\
@@ -135,6 +135,10 @@ ft_strcat.o\
 ft_strequ.o\
 ft_strmapi.o\
 ft_strrchr.o\
+atoc.o\
+ft_itoa_base.o\
+ft_wordcount.o\
+is_space.o\
 
 FLAGS = -Wall -Werror -Wextra 
 

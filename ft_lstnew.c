@@ -6,7 +6,7 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/01 10:28:18 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/02 04:05:44 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/06 03:43:49 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 t_list				*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list			*retn;
-	size_t			i;
 
-	i = 0;
 	if (!(retn = (t_list*)malloc(sizeof(t_list))))
 		return (NULL);
 	else if (!content)

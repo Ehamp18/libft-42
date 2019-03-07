@@ -6,7 +6,7 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/01 10:36:07 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/02 06:03:23 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/06 01:46:54 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,19 @@
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list	*sf;
+	t_list	*head;
 
+	if (!lst)
+		return (NULL);
 	if (!(sf = (t_list*)malloc(sizeof(t_list))))
 		return (NULL);
-	while (lst != '\0')
+	sf = f(lst);
+	head = sf;
+	while (lst->next)
 	{
-		sf = f(lst);
 		lst = lst->next;
-		sf++;
+		sf->next = f(lst);
+		sf = sf->next;
 	}
-	return (sf);
+	return (head);
 }

@@ -6,7 +6,7 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 22:21:31 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/04 22:18:44 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/07 02:05:09 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void				ft_striter(char *s, void (*f)(char *))
 	unsigned int	i;
 
 	i = 0;
-	if (!s)
+	if (!s || !f)
 		return ;
 	while (s[i] != '\0')
 	{

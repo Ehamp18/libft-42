@@ -6,7 +6,7 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 17:16:08 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/04 23:07:38 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/07 00:41:54 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,28 @@
 char		**ft_strsplit(char const *s, char c)
 {
 	char	**arr;
-	char	*help;
-	int		trip[4];
+	int		a;
+	int		b;
+	int		d;
+	int		word;
 
-	trip[1] = 0;
-	help = ft_strnew(ft_strlen(s));
-	ft_strcpy(help, s);
-	trip[2] = 0;
-	if (!*help || !(arr = (char**)ft_memalloc(sizeof(char*) *
-			(ft_wordcount(help, c) + 1))) || !c)
+	if (!s || !c)
 		return (0);
-	while (help[trip[2]])
+	word = ft_wordcount(s, c);
+	if (!(arr = (char**)ft_memalloc(sizeof(char*) * (word + 1))))
+		return (0);
+	b = 0;
+	while (word)
 	{
-		while (help[trip[2]] == c)
-			trip[2]++;
-		trip[1] = trip[2];
-		while (help[trip[2]++] != c && help[trip[2]])
-			if (help[trip[2]] == c && (trip[3] = trip[2] - trip[1]) > -1)
+		a = b;
+		while (s[b] && s[b++] != c)
+			if (s[b] == '\0' || s[b] == c)
 			{
-				if (!(*arr = ft_strnew(trip[3])))
+				d = b - a;
+				if (!(*arr++ = ft_strsub(s, a, d)))
 					return (NULL);
-				ft_strncpy(*arr++, help + trip[1], trip[3]);
+				word--;
 			}
 	}
-	return (arr - ft_wordcount(s, c));
+	return (arr -= ft_wordcount(s, c));
 }

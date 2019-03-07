@@ -6,7 +6,7 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 19:47:06 by elhampto          #+#    #+#             */
-/*   Updated: 2019/02/25 19:52:49 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/05 23:49:00 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int			ft_isprint(int c)
 {
-	if (ft_isascii(c) == 1)
+	if (c >= 32 && c <= 126)
 		return (1);
 	return (0);
 }

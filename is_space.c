@@ -1,42 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*   is_space.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/26 20:01:13 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/06 21:19:11 by elhampto         ###   ########.fr       */
+/*   Created: 2019/03/07 02:29:43 by elhampto          #+#    #+#             */
+/*   Updated: 2019/03/07 04:06:00 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_itoa_base(int n, int base)
+int			is_space(char c)
 {
-	const char	index[16] = "0123456789abcdef";
-	int			len;
-	long		a;
-	char		*asc;
-
-	a = n;
-	len = (n <= 0) ? 1 : 0;
-	while (a)
-	{
-		len++;
-		a /= base;
-	}
-	a = n;
-	if (a < 0)
-		a *= -1;
-	if (!(asc = ft_strnew(len)))
-		return (0);
-	while (len--)
-	{
-		asc[len] = index[a % base];
-		a /= base;
-	}
-	if (n < 0)
-		asc[0] = '-';
-	return (asc);
+	if (c == '\r' || c == '\f' || c == '\v' || c == '\t' ||
+		c == '\n' || c == ' ')
+		return (1);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 17:16:36 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/04 22:16:15 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/06 21:51:47 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,17 @@ char			*ft_strtrim(char const *s)
 	char		*string;
 
 	if (!s)
-		return (0);
+		return (NULL);
 	sta = 0;
 	end = (ft_strlen(s) - 1);
-	if (!(string = (char*)malloc(sizeof(end))))
-		return (0);
-	ft_strcpy(string, s);
-	while (string[sta] == ' ' || string[sta] == '\t' || string[sta] == '\n')
+	while (s[sta] == ' ' || s[sta] == '\t' || s[sta] == '\n')
 		sta++;
-	while (string[end] == ' ' || string[end] == '\t' || string[end] == '\n')
+	while (end && (s[end] == ' ' || s[end] == '\t' || s[end] == '\n'))
 		end--;
-	string[end + 1] = '\0';
-	return (string + sta);
+	if (end <= sta)
+		return (ft_strnew(0));
+	if (!(string = ft_strnew(end - sta + 1)))
+		return (NULL);
+	ft_strncpy(string, s + sta, end - sta + 1);
+	return (string);
 }

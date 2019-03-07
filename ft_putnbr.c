@@ -6,7 +6,7 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 03:48:38 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/04 12:56:57 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/07 01:48:16 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,11 @@
 
 void	ft_putnbr(int n)
 {
-	if (n == -2147483648)
-	{
-		ft_putstr("-2147483648");
-		return ;
-	}
 	if (n < 0)
-	{
-		n = -n;
 		ft_putchar('-');
-	}
-	else if (n >= 10)
-	{
-		ft_putnbr(n / 10);
-		ft_putchar(n % 10 + '0');
-	}
-	else
-		ft_putchar(n + '0');
+	if (n >= 0)
+		n = -n;
+	if (n <= -10)
+		ft_putnbr(-(n / 10));
+	ft_putchar('0' - (n % 10));
 }
