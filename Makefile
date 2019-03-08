@@ -15,6 +15,7 @@ NAME = libft.a
 SRC = ft_isascii.c\
 ft_memcmp.c\
 ft_putendl.c\
+ft_strsplit.c\
 ft_strchr.c\
 ft_striter.c\
 ft_strncat.c\
@@ -112,6 +113,7 @@ ft_strnequ.o\
 ft_strtrim.o\
 ft_bzero.o\
 ft_memalloc.o\
+ft_strsplit.o\
 ft_memset.o\
 ft_putstr.o\
 ft_strdel.o\
