@@ -18,7 +18,6 @@ ft_putendl.c\
 ft_strchr.c\
 ft_striter.c\
 ft_strncat.c\
-ft_strsplit.c\
 ft_isdigit.c\
 ft_memcpy.c\
 ft_putendl_fd.c\
@@ -83,7 +82,6 @@ ft_putendl.o\
 ft_strchr.o\
 ft_striter.o\
 ft_strncat.o\
-ft_strsplit.o\
 ft_isdigit.o\
 ft_memcpy.o\
 ft_lstadd.o\
