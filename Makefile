@@ -6,7 +6,7 @@
 #    By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/15 10:37:28 by elhampto          #+#    #+#              #
-#    Updated: 2019/03/08 13:54:00 by elhampto         ###   ########.fr        #
+#    Updated: 2019/03/08 16:39:19 by elhampto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -156,4 +156,4 @@ fclean: clean
 	@/bin/rm -f $(NAME)
 
 re: fclean all
-.PHONY: clean, fclean, re
+.PHONY: all, clean, fclean, re
