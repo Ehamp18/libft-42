@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_tokreplc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: alkozma <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/11 18:59:41 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/02/12 13:49:40 by cbagdon          ###   ########.fr       */
+/*   Created: 2019/02/20 21:16:12 by alkozma           #+#    #+#             */
+/*   Updated: 2019/02/20 21:22:42 by alkozma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_tokreplc(char *str, char tok, char c)
 {
-	while (*s)
-	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
-	}
-	return ((*s == (char)c) ? (char *)s : NULL);
+	int i;
+
+	i = -1;
+	while (str[++i])
+		if (str[i] == tok)
+			str[i] = c;
 }

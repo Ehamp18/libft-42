@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_getwordcount.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/11 18:59:41 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/02/12 13:49:40 by cbagdon          ###   ########.fr       */
+/*   Created: 2019/02/13 11:44:44 by cbagdon           #+#    #+#             */
+/*   Updated: 2019/02/14 09:30:03 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	*ft_strchr(const char *s, int c)
+/*
+**	Gets word count in string using delimiter c
+*/
+
+int		ft_getwordcount(char const *str, char c)
 {
-	while (*s)
+	int		i;
+	int		count;
+
+	i = 0;
+	count = 0;
+	while (str[i])
 	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
+		while (str[i] == c)
+			i++;
+		if (str[i] && str[i] != c)
+			count++;
+		while (str[i] && str[i] != c)
+			i++;
 	}
-	return ((*s == (char)c) ? (char *)s : NULL);
+	return (count);
 }

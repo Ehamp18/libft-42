@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/11 18:59:41 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/02/12 13:49:40 by cbagdon          ###   ########.fr       */
+/*   Created: 2019/02/13 13:40:47 by cbagdon           #+#    #+#             */
+/*   Updated: 2019/02/14 09:31:05 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	*ft_strchr(const char *s, int c)
+/*
+**	Fucntion to count the amount of digits in an int
+*/
+
+int		ft_intlen(int num)
 {
-	while (*s)
+	unsigned int	i;
+	unsigned int	count;
+
+	count = 0;
+	if (num < 0)
+		i = -num;
+	else
+		i = num;
+	if (i == 0)
+		return (1);
+	while (i != 0)
 	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
+		i /= 10;
+		count++;
 	}
-	return ((*s == (char)c) ? (char *)s : NULL);
+	return (count);
 }

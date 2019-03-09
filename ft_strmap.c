@@ -3,29 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/23 22:47:51 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/04 22:21:33 by elhampto         ###   ########.fr       */
+/*   Created: 2019/02/12 20:35:17 by cbagdon           #+#    #+#             */
+/*   Updated: 2019/02/12 20:41:53 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
-char		*ft_strmap(char const *s, char (*f)(char))
+/*
+** Because the instructions suck dick - we malloc a new string the same length
+** as the original, *s. We then fill each character as a result of the function
+** *f applied to *s.
+*/
+
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	int		i;
-	char	*sf;
+	unsigned int	length;
+	unsigned int	i;
+	char			*string;
 
-	i = 0;
-	if (!s)
-		return (0);
-	if (!(sf = ft_strnew(ft_strlen(s))))
+	if (!s || !f)
 		return (NULL);
-	while (s[i] != '\0')
+	i = 0;
+	length = ft_strlen(s);
+	if (!(string = (char *)malloc(sizeof(char) * length + 1)))
+		return (NULL);
+	while (s[i])
 	{
-		sf[i] = f(s[i]);
+		string[i] = (*f)(s[i]);
 		i++;
 	}
-	return (sf);
+	string[i] = '\0';
+	return (string);
 }

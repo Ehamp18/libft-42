@@ -3,26 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/20 09:08:08 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/03 22:58:34 by elhampto         ###   ########.fr       */
+/*   Created: 2019/02/12 16:59:19 by cbagdon           #+#    #+#             */
+/*   Updated: 2019/02/12 19:54:31 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
-void				*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
+	size_t			i;
+	unsigned char	*source;
 	unsigned char	*dest;
-	unsigned char	*sorc;
 
-	dest = (unsigned char*)dst;
-	sorc = (unsigned char*)src;
-	if (dest > sorc)
-		while (len--)
-			dest[len] = sorc[len];
+	i = 0;
+	source = (unsigned char *)src;
+	dest = (unsigned char *)dst;
+	if (source < dest)
+	{
+		while (len > 0)
+		{
+			len--;
+			dest[len] = source[len];
+		}
+	}
 	else
-		ft_memcpy(dest, sorc, len);
-	return (dst);
+	{
+		while (i < len)
+		{
+			dest[i] = source[i];
+			i++;
+		}
+	}
+	return ((unsigned char *)dst);
 }

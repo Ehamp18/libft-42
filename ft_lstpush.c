@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstpush.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/11 18:59:41 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/02/12 13:49:40 by cbagdon          ###   ########.fr       */
+/*   Created: 2019/02/13 16:52:45 by cbagdon           #+#    #+#             */
+/*   Updated: 2019/02/13 17:08:14 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_lstpush(t_list *head, t_list *new)
 {
-	while (*s)
+	if (head)
 	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
+		while (head->next)
+			head = head->next;
+		head->next = new;
 	}
-	return ((*s == (char)c) ? (char *)s : NULL);
+	else
+		head = new;
 }

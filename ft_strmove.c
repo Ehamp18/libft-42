@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/11 18:59:41 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/02/12 13:49:40 by cbagdon          ###   ########.fr       */
+/*   Created: 2019/02/24 20:43:19 by cbagdon           #+#    #+#             */
+/*   Updated: 2019/02/24 20:44:11 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_strmove(char *dst, const char *src)
 {
-	while (*s)
+	int		i;
+
+	i = 0;
+	while (src[i])
 	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
+		dst[i] = src[i];
+		i++;
 	}
-	return ((*s == (char)c) ? (char *)s : NULL);
 }

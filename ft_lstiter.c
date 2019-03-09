@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_listiter.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/01 10:35:39 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/02 05:40:33 by elhampto         ###   ########.fr       */
+/*   Created: 2019/02/13 16:38:14 by cbagdon           #+#    #+#             */
+/*   Updated: 2019/02/13 16:40:15 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
-void			ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elemn))
 {
-	while (lst != '\0')
+	while (lst)
 	{
-		f(lst);
+		(*f)(lst);
 		lst = lst->next;
 	}
 }

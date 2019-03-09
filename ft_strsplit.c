@@ -3,41 +3,57 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/24 17:16:08 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/08 16:15:14 by elhampto         ###   ########.fr       */
+/*   Created: 2019/02/13 11:54:16 by cbagdon           #+#    #+#             */
+/*   Updated: 2019/02/13 16:41:11 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
-char		**ft_strsplit(char const *s, char c)
+static int		get_word_len(char const *word, char delim)
 {
-	char	**arr;
-	int		a;
-	int		b;
-	int		d;
-	int		word;
+	int		i;
+	int		count;
 
-	if (!s || !c)
-		return (0);
-	word = ft_wordcount(s, c);
-	if (!(arr = (char**)ft_memalloc(sizeof(char*) * (word + 1))))
-		return (0);
-	b = 0;
-	while (word)
+	i = 0;
+	count = 0;
+	while (word[i] && word[i] == delim)
+		i++;
+	while (word[i] && word[i] != delim)
 	{
-		if (s[b] && s[b] != c)
-			a = b;
-		while (s[b] && s[b++] != c)
-			if (s[b] == '\0' || s[b] == c)
-			{
-				d = b - a;
-				if (!(*arr++ = ft_strsub(s, a, d)))
-					return (NULL);
-				word--;
-			}
+		i++;
+		count++;
 	}
-	return (arr -= ft_wordcount(s, c));
+	return (count);
+}
+
+char			**ft_strsplit(char const *s, char c)
+{
+	int		i;
+	int		j;
+	int		k;
+	char	**strings;
+
+	if (!s || !(strings = (char **)malloc(sizeof(char *) *
+					ft_getwordcount(s, c) + 1)))
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (i < ft_getwordcount(s, c))
+	{
+		k = 0;
+		if (!(strings[i] = (char *)malloc(sizeof(char) *
+						get_word_len(&s[j], c) + 1)))
+			return (NULL);
+		while (s[j] == c)
+			j++;
+		while (s[j] && s[j] != c)
+			strings[i][k++] = s[j++];
+		strings[i][k] = '\0';
+		i++;
+	}
+	strings[i] = 0;
+	return (strings);
 }

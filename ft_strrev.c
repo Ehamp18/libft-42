@@ -1,24 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/11 18:59:41 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/02/12 13:49:40 by cbagdon          ###   ########.fr       */
+/*   Created: 2019/02/27 23:30:18 by cbagdon           #+#    #+#             */
+/*   Updated: 2019/03/01 14:00:41 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	*ft_strchr(const char *s, int c)
+static void		ft_swap(char *a, char *b)
 {
-	while (*s)
+	char	c;
+
+	c = *a;
+	*a = *b;
+	*b = c;
+}
+
+void			ft_strrev(char *str)
+{
+	char	*pointer;
+
+	pointer = str;
+	while (*pointer)
+		pointer++;
+	pointer--;
+	while (str < pointer)
 	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
+		ft_swap(&(*str), &(*pointer));
+		str++;
+		pointer--;
 	}
-	return ((*s == (char)c) ? (char *)s : NULL);
 }

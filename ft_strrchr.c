@@ -3,24 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/14 16:19:54 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/04 20:56:32 by elhampto         ###   ########.fr       */
+/*   Created: 2019/02/12 09:56:06 by cbagdon           #+#    #+#             */
+/*   Updated: 2019/02/12 14:04:59 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
-char		*ft_strrchr(const char *s, int c)
+/*
+**I spent way too long debugging this fucking pointer. Turns out if you
+**forget to set it to NULL, you have a completely wrong return value
+**with non-found chars and empty strings. Feels good.
+*/
+
+char	*ft_strrchr(const char *s, int c)
 {
-	int		lem;
+	char	*pointer;
+	char	*pointer2;
 
-	lem = ft_strlen(s);
-	if (!c)
-		return ((char*)s + lem);
-	while (lem--)
-		if (s[lem] == c)
-			return ((char*)s + lem);
-	return (0);
+	pointer = NULL;
+	if (c == '\0')
+		return (ft_strchr(s, '\0'));
+	while ((pointer2 = ft_strchr(s, c)) != NULL)
+	{
+		pointer = pointer2;
+		s = pointer2 + 1;
+	}
+	return ((char *)pointer);
 }

@@ -3,34 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/14 16:20:03 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/05 23:44:29 by elhampto         ###   ########.fr       */
+/*   Created: 2019/02/12 10:56:02 by cbagdon           #+#    #+#             */
+/*   Updated: 2019/02/12 14:03:06 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
-char		*ft_strnstr(const char *hay, const char *need, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int		size;
-	int		i;
+	char		*my_haystack;
+	char		*my_needle;
+	size_t		count;
+	size_t		c2;
 
-	if (!*need)
-		return ((char*)hay);
-	size = ft_strlen(need);
-	while (*hay && len)
+	if (!*needle)
+		return ((char *)haystack);
+	count = 0;
+	while (*haystack && count < len)
 	{
-		i = 0;
-		while (*hay && hay[i] == need[i] && len - i)
+		my_haystack = (char *)haystack;
+		my_needle = (char *)needle;
+		c2 = count;
+		while (*haystack && *my_needle && *haystack == *my_needle && c2 < len)
 		{
-			if (i + 1 == size)
-				return ((char*)hay);
-			i++;
+			haystack++;
+			my_needle++;
+			c2++;
 		}
-		hay++;
-		len--;
+		if (!*my_needle)
+			return (my_haystack);
+		haystack = my_haystack + 1;
+		count++;
 	}
-	return (0);
+	return (NULL);
 }
