@@ -3,29 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/13 16:44:57 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/02/13 17:12:43 by cbagdon          ###   ########.fr       */
+/*   Created: 2019/03/01 10:36:07 by elhampto          #+#    #+#             */
+/*   Updated: 2019/03/06 01:46:54 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	t_list		*new_list;
+	t_list	*sf;
+	t_list	*head;
 
-	if (lst)
+	if (!lst)
+		return (NULL);
+	if (!(sf = (t_list*)malloc(sizeof(t_list))))
+		return (NULL);
+	sf = f(lst);
+	head = sf;
+	while (lst->next)
 	{
-		new_list = (*f)(lst);
 		lst = lst->next;
-		while (lst)
-		{
-			ft_lstpush(new_list, (*f)(lst));
-			lst = lst->next;
-		}
-		return (new_list);
+		sf->next = f(lst);
+		sf = sf->next;
 	}
-	return (NULL);
+	return (head);
 }

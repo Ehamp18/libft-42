@@ -3,31 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/12 21:49:12 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/02/13 10:58:02 by cbagdon          ###   ########.fr       */
+/*   Created: 2019/02/24 17:16:36 by elhampto          #+#    #+#             */
+/*   Updated: 2019/03/06 21:51:47 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
-char	*ft_strtrim(char const *s)
+char			*ft_strtrim(char const *s)
 {
-	int			i;
-	int			len;
+	size_t		sta;
+	size_t		end;
 	char		*string;
 
 	if (!s)
 		return (NULL);
-	i = 0;
-	len = ft_strlen(s);
-	while (IS_SPACE(s[i]))
-		i++;
-	if ((size_t)i == ft_strlen(s))
-		return (ft_strnew(1));
-	while (IS_SPACE(s[len - 1]))
-		len--;
-	string = ft_strsub(s, i, (size_t)(len - i));
+	sta = 0;
+	end = (ft_strlen(s) - 1);
+	while (s[sta] == ' ' || s[sta] == '\t' || s[sta] == '\n')
+		sta++;
+	while (end && (s[end] == ' ' || s[end] == '\t' || s[end] == '\n'))
+		end--;
+	if (end <= sta)
+		return (ft_strnew(0));
+	if (!(string = ft_strnew(end - sta + 1)))
+		return (NULL);
+	ft_strncpy(string, s + sta, end - sta + 1);
 	return (string);
 }
