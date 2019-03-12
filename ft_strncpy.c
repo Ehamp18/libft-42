@@ -6,7 +6,7 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/17 16:25:01 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/03 23:36:16 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/11 18:25:44 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char		*ft_strncpy(char *dst, const char *src, size_t len)
 	size_t	i;
 
 	i = 0;
-	ft_bzero((void*)dst, len);
+	ft_memset((void*)dst, 0, len);
 	while (src[i] && i < len)
 	{
 		dst[i] = src[i];

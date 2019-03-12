@@ -6,11 +6,21 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 17:15:24 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/04 21:37:11 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/11 18:19:45 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static size_t	lensi(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}
 
 char			*ft_strjoin(char const *s1, char const *s2)
 {
@@ -19,7 +29,7 @@ char			*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s1 || !s2)
 		return (NULL);
-	len = ft_strlen(s1) + ft_strlen(s2);
+	len = lensi(s1) + lensi(s2);
 	if (!(str = ft_strnew(len)))
 		return (0);
 	ft_strcpy(str, s1);

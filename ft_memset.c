@@ -6,13 +6,13 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 17:42:02 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/08 14:52:23 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/11 18:15:07 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_memset(void *b, int c, size_t len)
+void				*ft_memset(void *b, int c, size_t len)
 {
 	size_t			i;
 	unsigned char	*a;
