@@ -6,7 +6,7 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 14:55:15 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/07 03:58:32 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/11 17:57:07 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct		s_list
 
 int					ft_atoi(const char *str);
 int					ft_isalnum(int c);
-int					is_space(char c);
+int					ft_is_space(char c);
 int					ft_isalpha(int c);
 int					ft_isascii(int c);
 int					ft_isdigit(int c);
@@ -48,11 +48,11 @@ int					ft_strequ(char const *s1, char const *s2);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 
 char				*ft_strnew(size_t size);
+char				ft_atoc(unsigned int asc);
 char				*ft_strdup(const char *s1);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strchr(const char *s, int c);
-char				atoc(unsigned int asc);
 char				*ft_itoa_base(int n, int base);
 char				*ft_strcat(char *s1, const char *s2);
 char				*ft_strncat(char *s1, const char *s2, size_t n);

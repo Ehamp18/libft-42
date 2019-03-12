@@ -6,25 +6,18 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 17:16:08 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/08 16:41:06 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/11 17:52:40 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		**ft_strsplit(char const *s, char c)
+static char		**word_check(char **arc, const char *s, int word, char c)
 {
-	char	**arr;
-	int		a;
-	int		b;
-	int		d;
-	int		word;
+	int			a;
+	int			b;
+	int			d;
 
-	if (!s || !c)
-		return (0);
-	word = ft_wordcount(s, c);
-	if (!(arr = (char**)ft_memalloc(sizeof(char*) * (word + 1))))
-		return (0);
 	b = 0;
 	while (word)
 	{
@@ -34,10 +27,24 @@ char		**ft_strsplit(char const *s, char c)
 			if (s[b] == '\0' || s[b] == c)
 			{
 				d = b - a;
-				if (!(*arr++ = ft_strsub(s, a, d)))
+				if (!(*arc++ = ft_strsub(s, a, d)))
 					return (NULL);
 				word--;
 			}
 	}
-	return (arr -= ft_wordcount(s, c));
+	return (arc);
+}
+
+char			**ft_strsplit(char const *s, char c)
+{
+	char		**arr;
+	int			word;
+
+	if (!s || !c)
+		return (0);
+	word = ft_wordcount(s, c);
+	if (!(arr = (char**)ft_memalloc(sizeof(char*) * (word + 1))))
+		return (0);
+	word_check(arr, s, word, c);
+	return (arr);
 }

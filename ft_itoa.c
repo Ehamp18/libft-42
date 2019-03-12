@@ -6,7 +6,7 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 17:17:07 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/07 20:45:15 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/11 17:38:10 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,29 @@
 
 char		*ft_itoa(int n)
 {
-	char	*str;
+	const char	index[10] = "0123456789";
+	int			len;
+	long		a;
+	char		*asc;
 
-	str = ft_itoa_base(n, 10);
-	return (str);
+	a = n;
+	len = (n <= 0) ? 1 : 0;
+	while (a)
+	{
+		len++;
+		a /= 10;
+	}
+	a = n;
+	if (a < 0)
+		a *= -1;
+	if (!(asc = ft_strnew(len)))
+		return (0);
+	while (len--)
+	{
+		asc[len] = index[a % 10];
+		a /= 10;
+	}
+	if (n < 0)
+		asc[0] = '-';
+	return (asc);
 }

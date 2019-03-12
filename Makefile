@@ -6,7 +6,7 @@
 #    By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/15 10:37:28 by elhampto          #+#    #+#              #
-#    Updated: 2019/03/08 15:00:33 by elhampto         ###   ########.fr        #
+#    Updated: 2019/03/11 17:57:31 by elhampto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,10 +70,10 @@ ft_strcat.c\
 ft_strequ.c\
 ft_strmapi.c\
 ft_strrchr.c\
-atoc.c\
+ft_atoc.c\
 ft_itoa_base.c\
 ft_wordcount.c\
-is_space.c\
+ft_is_space.c\
 
 INC = libft.h
 
@@ -135,10 +135,10 @@ ft_strcat.o\
 ft_strequ.o\
 ft_strmapi.o\
 ft_strrchr.o\
-atoc.o\
+ft_atoc.o\
 ft_itoa_base.o\
 ft_wordcount.o\
-is_space.o\
+ft_is_space.o\
 
 FLAGS = -Wall -Werror -Wextra 
 

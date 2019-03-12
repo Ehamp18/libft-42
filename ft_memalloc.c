@@ -6,7 +6,7 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 13:54:08 by elhampto          #+#    #+#             */
-/*   Updated: 2019/02/25 10:48:50 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/10 21:43:41 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ void			*ft_memalloc(size_t size)
 {
 	void		*fresh;
 
-	fresh = malloc(size);
-	if (!fresh)
+	if (!(fresh = malloc(size)))
 		return (NULL);
 	ft_bzero(fresh, size);
 	return (fresh);
