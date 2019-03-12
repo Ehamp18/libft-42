@@ -145,16 +145,16 @@ INC = libft.h
 all: $(NAME)
 
 $(NAME):
-	@gcc $(FLAGS) -c $(SRC) $(INC)
+	@gcc $(FLAGS) -c $(SRC) -I s$(INC)
 	@ar rc $(NAME) $(OB)
 	@ranlib $(NAME)
 
 clean:
-	@rm -f $(OB)
+	@rm -rf $(OB)
 	@rm -rf *.gch
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -rf $(NAME)
 
 re: fclean all
 .PHONY: all, clean, fclean, re
