@@ -75,8 +75,6 @@ ft_itoa_base.c\
 ft_wordcount.c\
 ft_is_space.c\
 
-INC = libft.h
-
 OB = ft_isascii.o\
 ft_memcmp.o\
 ft_putendl.o\
@@ -140,7 +138,9 @@ ft_itoa_base.o\
 ft_wordcount.o\
 ft_is_space.o\
 
-FLAGS = -Wall -Werror -Wextra 
+FLAGS = -Wall -Werror -Wextra
+
+INC = libft.h
 
 all: $(NAME)
 
@@ -151,6 +151,7 @@ $(NAME):
 
 clean:
 	@/bin/rm -f $(OB)
+	@rm -rf *.gch
 
 fclean: clean
 	@/bin/rm -f $(NAME)
