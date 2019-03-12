@@ -43,7 +43,7 @@ char			**ft_strsplit(char const *s, char c)
 	if (!s || !c)
 		return (0);
 	word = ft_wordcount(s, c);
-	if (!(arr = (char**)ft_memalloc(sizeof(char*) * (word + 1))))
+	if (!(arr = (char**)malloc(sizeof(char*) * (word + 1))))
 		return (0);
 	word_check(arr, s, word, c);
 	return (arr);
