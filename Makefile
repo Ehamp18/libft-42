@@ -154,7 +154,7 @@ clean:
 	@rm -rf *.gch
 
 fclean: clean
-	@/bin/rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 .PHONY: all, clean, fclean, re
