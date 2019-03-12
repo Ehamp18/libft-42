@@ -150,7 +150,7 @@ $(NAME):
 	@ranlib $(NAME)
 
 clean:
-	@/bin/rm -f $(OB)
+	@rm -f $(OB)
 	@rm -rf *.gch
 
 fclean: clean
