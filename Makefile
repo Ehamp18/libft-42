@@ -145,7 +145,7 @@ INC = libft.h
 all: $(NAME)
 
 $(NAME):
-	@gcc $(FLAGS) -c $(SRC) -I s$(INC)
+	@gcc $(FLAGS) -c $(SRC) -I $(INC)
 	@ar rc $(NAME) $(OB)
 	@ranlib $(NAME)
 
