@@ -140,12 +140,10 @@ ft_is_space.o\
 
 FLAGS = -Wall -Werror -Wextra
 
-INC = libft.h
-
 all: $(NAME)
 
 $(NAME):
-	@gcc $(FLAGS) -c $(SRC) -I $(INC)
+	@gcc $(FLAGS) -c $(SRC)
 	@ar rc $(NAME) $(OB)
 	@ranlib $(NAME)
 
