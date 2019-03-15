@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+         #
+#    By: ehamp <ehamp@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/15 10:37:28 by elhampto          #+#    #+#              #
-#    Updated: 2019/03/11 17:57:31 by elhampto         ###   ########.fr        #
+#    Updated: 2019/03/14 20:22:03 by ehamp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,7 @@ ft_strrchr.c\
 ft_atoc.c\
 ft_itoa_base.c\
 ft_wordcount.c\
-ft_is_space.c\
+ft_is_space.c
 
 OB = ft_isascii.o\
 ft_memcmp.o\
@@ -136,7 +136,7 @@ ft_strrchr.o\
 ft_atoc.o\
 ft_itoa_base.o\
 ft_wordcount.o\
-ft_is_space.o\
+ft_is_space.o
 
 FLAGS = -Wall -Werror -Wextra
 
