@@ -3,10 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+         #
+#    By: ehamp <ehamp@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/15 10:37:28 by elhampto          #+#    #+#              #
+<<<<<<< HEAD
 #    Updated: 2019/03/12 16:09:54 by elhampto         ###   ########.fr        #
+=======
+#    Updated: 2019/03/14 20:26:00 by ehamp            ###   ########.fr        #
+>>>>>>> 122d558c71d0cf1d46f724199df7586db11b112a
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +77,7 @@ ft_strrchr.c\
 ft_atoc.c\
 ft_itoa_base.c\
 ft_wordcount.c\
-ft_is_space.c\
+ft_is_space.c
 
 OB = ft_isascii.o\
 ft_memcmp.o\
@@ -136,7 +140,7 @@ ft_strrchr.o\
 ft_atoc.o\
 ft_itoa_base.o\
 ft_wordcount.o\
-ft_is_space.o\
+ft_is_space.o
 
 FLAGS = -Wall -Werror -Wextra
 
@@ -150,8 +154,12 @@ $(NAME):
 	@ranlib $(NAME)
 
 clean:
+<<<<<<< HEAD
 	@/bin/rm -f $(OB)
 	@rm -f *.gch
+=======
+	@rm -rf $(OB)
+>>>>>>> 122d558c71d0cf1d46f724199df7586db11b112a
 
 fclean: clean
 	@/bin/rm -f $(NAME)
