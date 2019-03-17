@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmckelvy <cmckelvy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/23 21:00:58 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/04 14:27:25 by elhampto         ###   ########.fr       */
+/*   Created: 2019/02/15 15:14:43 by cmckelvy          #+#    #+#             */
+/*   Updated: 2019/02/17 17:12:17 by cmckelvy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_memdel(void **ap)
+void	ft_memdel(void **ap)
 {
 	if (ap && *ap)
 	{
