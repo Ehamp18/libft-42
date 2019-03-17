@@ -154,15 +154,11 @@ $(NAME):
 	@ranlib $(NAME)
 
 clean:
-<<<<<<< HEAD
-	@/bin/rm -f $(OB)
-	@rm -f *.gch
-=======
+	@rm -f $(OB)
 	@rm -rf $(OB)
->>>>>>> 122d558c71d0cf1d46f724199df7586db11b112a
 
 fclean: clean
-	@/bin/rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 .PHONY: all, clean, fclean, re
