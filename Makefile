@@ -3,13 +3,13 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ehamp <ehamp@student.42.fr>                +#+  +:+       +#+         #
+#    By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/15 10:37:28 by elhampto          #+#    #+#              #
-#    Updated: 2019/03/16 20:13:56 by elhampto         ###   ########.fr        #
-#    Updated: 2019/03/14 20:26:00 by ehamp            ###   ########.fr        #
+#    Updated: 2019/03/17 05:23:09 by elhampto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 NAME = libft.a
 
