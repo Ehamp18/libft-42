@@ -6,7 +6,7 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 17:16:08 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/11 18:32:49 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/15 22:05:10 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ static char		**word_check(char **arc, const char *s, int word, char c)
 				d = b - a;
 				if (!(*arc++ = ft_strsub(s, a, d)))
 					return (NULL);
-				word--;
 			}
+		word--;
 	}
 	return (arc);
 }

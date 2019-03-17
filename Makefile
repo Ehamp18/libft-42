@@ -6,7 +6,7 @@
 #    By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/15 10:37:28 by elhampto          #+#    #+#              #
-#    Updated: 2019/03/11 17:57:31 by elhampto         ###   ########.fr        #
+#    Updated: 2019/03/12 16:09:54 by elhampto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -140,19 +140,21 @@ ft_is_space.o\
 
 FLAGS = -Wall -Werror -Wextra
 
+INC = libft.h
+
 all: $(NAME)
 
 $(NAME):
-	@gcc $(FLAGS) -c $(SRC)
+	@gcc $(FLAGS) -c $(SRC) $(INC)
 	@ar rc $(NAME) $(OB)
 	@ranlib $(NAME)
 
 clean:
-	@rm -rf $(OB)
-	@rm -rf *.gch
+	@/bin/rm -f $(OB)
+	@rm -f *.gch
 
 fclean: clean
-	@rm -rf $(NAME)
+	@/bin/rm -f $(NAME)
 
 re: fclean all
 .PHONY: all, clean, fclean, re

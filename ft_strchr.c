@@ -6,7 +6,7 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 14:11:58 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/04 12:31:15 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/15 21:49:20 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 char		*ft_strchr(const char *s, int c)
 {
+	if (!s)
+		return (0);
 	while (*s && *s != c)
 		s++;
 	if (*s == c)

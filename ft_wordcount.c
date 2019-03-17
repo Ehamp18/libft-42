@@ -6,7 +6,7 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/25 19:25:31 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/05 15:41:53 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/15 22:22:08 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t			ft_wordcount(char const *s, char c)
 
 	i = 0;
 	count = 0;
+	if (!s || !*s)
+		return (0);
 	if (!c)
 		c = '\n';
 	while (s[i])
