@@ -6,7 +6,7 @@
 #    By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/15 10:37:28 by elhampto          #+#    #+#              #
-#    Updated: 2019/03/17 06:03:58 by elhampto         ###   ########.fr        #
+#    Updated: 2019/03/17 06:12:26 by elhampto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,40 +41,40 @@ ft_isascii.c\
 ft_isprint.c\
 ft_toupper.c\
 ft_tolower.c\
-# ft_striter.c\
-# ft_strsplit.c\
-# ft_putendl_fd.c\
-# ft_strclr.c\
-# ft_striteri.c\
-# ft_memdel.c\
-# ft_putnbr.c\
-# ft_strjoin.c\
-# ft_strsub.c\
-# ft_itoa.c\
-# ft_putnbr_fd.c\
-# ft_strnequ.c\
-# ft_strtrim.c\
-# ft_memalloc.c\
-# ft_putstr.c\
-# ft_strdel.c\
-# ft_lstadd.c\
-# ft_lstdel.c\
-# ft_lstdelone.c\
-# ft_lstiter.c\
-# ft_lstmap.c\
-# ft_lstnew.c\
-# ft_strnew.c\
-# ft_putstr_fd.c\
-# ft_strmap.c\
-# ft_putchar.c\
-# ft_putchar_fd.c\
-# ft_putendl.c\
-# ft_strequ.c\
-# ft_strmapi.c\
-# ft_atoc.c\
-# ft_itoa_base.c\
-# ft_wordcount.c\
-# ft_is_space.c
+ft_striter.c\
+ft_strsplit.c\
+ft_putendl_fd.c\
+ft_strclr.c\
+ft_striteri.c\
+ft_memdel.c\
+ft_putnbr.c\
+ft_strjoin.c\
+ft_strsub.c\
+ft_itoa.c\
+ft_putnbr_fd.c\
+ft_strnequ.c\
+ft_strtrim.c\
+ft_memalloc.c\
+ft_putstr.c\
+ft_strdel.c\
+ft_lstadd.c\
+ft_lstdel.c\
+ft_lstdelone.c\
+ft_lstiter.c\
+ft_lstmap.c\
+ft_lstnew.c\
+ft_strnew.c\
+ft_putstr_fd.c\
+ft_strmap.c\
+ft_putchar.c\
+ft_putchar_fd.c\
+ft_putendl.c\
+ft_strequ.c\
+ft_strmapi.c\
+ft_atoc.c\
+ft_itoa_base.c\
+ft_wordcount.c\
+ft_is_space.c
 
 OB = ft_memset.o\
 ft_bzero.o\
@@ -104,40 +104,40 @@ ft_isascii.o\
 ft_isprint.o\
 ft_toupper.o\
 ft_tolower.o\
-# ft_striter.o\
-# ft_strsplit.o\
-# ft_putendl_fd.o\
-# ft_strclr.o\
-# ft_striteri.o\
-# ft_memdel.o\
-# ft_putnbr.o\
-# ft_strjoin.o\
-# ft_strsub.o\
-# ft_itoa.o\
-# ft_putnbr_fd.o\
-# ft_strnequ.o\
-# ft_strtrim.o\
-# ft_memalloc.o\
-# ft_putstr.o\
-# ft_strdel.o\
-# ft_lstadd.o\
-# ft_lstdel.o\
-# ft_lstdelone.o\
-# ft_lstiter.o\
-# ft_lstmap.o\
-# ft_lstnew.o\
-# ft_strnew.o\
-# ft_putstr_fd.o\
-# ft_strmap.o\
-# ft_putchar.o\
-# ft_putchar_fd.o\
-# ft_putendl.o\
-# ft_strequ.o\
-# ft_strmapi.o\
-# ft_atoc.o\
-# ft_itoa_base.o\
-# ft_wordcount.o\
-# ft_is_space.o
+ft_striter.o\
+ft_strsplit.o\
+ft_putendl_fd.o\
+ft_strclr.o\
+ft_striteri.o\
+ft_memdel.o\
+ft_putnbr.o\
+ft_strjoin.o\
+ft_strsub.o\
+ft_itoa.o\
+ft_putnbr_fd.o\
+ft_strnequ.o\
+ft_strtrim.o\
+ft_memalloc.o\
+ft_putstr.o\
+ft_strdel.o\
+ft_lstadd.o\
+ft_lstdel.o\
+ft_lstdelone.o\
+ft_lstiter.o\
+ft_lstmap.o\
+ft_lstnew.o\
+ft_strnew.o\
+ft_putstr_fd.o\
+ft_strmap.o\
+ft_putchar.o\
+ft_putchar_fd.o\
+ft_putendl.o\
+ft_strequ.o\
+ft_strmapi.o\
+ft_atoc.o\
+ft_itoa_base.o\
+ft_wordcount.o\
+ft_is_space.o
 
 
 FLAGS = -Wall -Werror -Wextra
