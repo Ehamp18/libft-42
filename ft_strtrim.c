@@ -6,7 +6,7 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 17:16:36 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/27 14:41:19 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/27 15:13:34 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ static size_t		lensi(const char *s)
 	return (i);
 }
 
-static char		*ncpy(char *dst, const char *src, size_t len)
+static char			*ncpy(char *dst, const char *src, size_t len)
 {
-	size_t	i;
+	size_t			i;
 
 	i = 0;
 	ft_memset((void*)dst, 0, len);
@@ -36,11 +36,11 @@ static char		*ncpy(char *dst, const char *src, size_t len)
 	return (dst);
 }
 
-char			*ft_strtrim(char const *s)
+char				*ft_strtrim(char const *s)
 {
-	size_t		sta;
-	size_t		end;
-	char		*string;
+	size_t			sta;
+	size_t			end;
+	char			*string;
 
 	if (!s)
 		return (NULL);
