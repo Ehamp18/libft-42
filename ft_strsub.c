@@ -3,28 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmckelvy <cmckelvy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/15 16:49:36 by cmckelvy          #+#    #+#             */
-/*   Updated: 2019/02/17 17:42:37 by cmckelvy         ###   ########.fr       */
+/*   Created: 2019/02/24 15:03:56 by elhampto          #+#    #+#             */
+/*   Updated: 2019/03/17 05:24:31 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+char				*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	char	*new;
-	int		i;
+	unsigned int	i;
+	char			*sub;
 
 	i = 0;
-	if (!(new = ft_strnew(len)) || !s)
+	if (!s || !*s)
+		return (0);
+	if (!(sub = ft_strnew(len)))
 		return (NULL);
-	while (len--)
+	while (s[start] != '\0' && i < len)
 	{
-		new[i] = s[start + i];
+		sub[i] = s[start + i];
 		i++;
 	}
-	new[i] = '\0';
-	return (new);
+	return (sub);
 }

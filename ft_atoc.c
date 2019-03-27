@@ -6,13 +6,13 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/07 03:20:59 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/11 17:56:50 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/27 14:32:05 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		ft_atoc(unsigned int asc)
+char				ft_atoc(unsigned int asc)
 {
 	if (!asc)
 		return (0);

@@ -6,13 +6,13 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/01 10:35:39 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/02 05:40:33 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/27 14:33:15 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+void				ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
 	while (lst != '\0')
 	{

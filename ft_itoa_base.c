@@ -6,13 +6,13 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/26 20:01:13 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/07 20:47:23 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/27 14:31:23 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_itoa_base(int n, int base)
+char				*ft_itoa_base(int n, int base)
 {
 	const char	index[16] = "0123456789abcdef";
 	int			len;

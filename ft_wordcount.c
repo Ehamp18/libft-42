@@ -6,13 +6,13 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/25 19:25:31 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/15 22:22:08 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/27 14:31:49 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t			ft_wordcount(char const *s, char c)
+size_t				ft_wordcount(char const *s, char c)
 {
 	int		i;
 	int		count;

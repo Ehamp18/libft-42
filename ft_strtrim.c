@@ -3,36 +3,57 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmckelvy <cmckelvy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/15 17:10:17 by cmckelvy          #+#    #+#             */
-/*   Updated: 2019/02/17 17:43:05 by cmckelvy         ###   ########.fr       */
+/*   Created: 2019/02/24 17:16:36 by elhampto          #+#    #+#             */
+/*   Updated: 2019/03/27 14:41:19 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+static size_t		lensi(const char *s)
 {
-	char	*new;
-	int		i;
-	int		j;
-	int		len;
+	size_t			i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}
+
+static char		*ncpy(char *dst, const char *src, size_t len)
+{
+	size_t	i;
+
+	i = 0;
+	ft_memset((void*)dst, 0, len);
+	while (src[i] && i < len)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	return (dst);
+}
+
+char			*ft_strtrim(char const *s)
+{
+	size_t		sta;
+	size_t		end;
+	char		*string;
 
 	if (!s)
 		return (NULL);
-	i = 0;
-	len = ft_strlen(s);
-	while (ft_isspace(s[i]))
-		i++;
-	while (ft_isspace(s[len - 1]))
-		len--;
-	len = len - i;
-	if (!(new = (char*)ft_strnew(len >= 0 ? len : 0)))
+	sta = 0;
+	end = (lensi(s) - 1);
+	while (s[sta] == ' ' || s[sta] == '\t' || s[sta] == '\n')
+		sta++;
+	while (end && (s[end] == ' ' || s[end] == '\t' || s[end] == '\n'))
+		end--;
+	if (end <= sta)
+		return (ft_strnew(0));
+	if (!(string = ft_strnew(end - sta + 1)))
 		return (NULL);
-	j = -1;
-	while (++j < len)
-		new[j] = s[i + j];
-	new[j] = '\0';
-	return (new);
+	ncpy(string, s + sta, end - sta + 1);
+	return (string);
 }

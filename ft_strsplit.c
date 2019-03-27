@@ -3,38 +3,48 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmckelvy <cmckelvy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/15 19:20:22 by cmckelvy          #+#    #+#             */
-/*   Updated: 2019/02/17 17:12:17 by cmckelvy         ###   ########.fr       */
+/*   Created: 2019/02/24 17:16:08 by elhampto          #+#    #+#             */
+/*   Updated: 2019/03/27 14:40:28 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_strsplit(char const *s, char c)
+static char			**word_check(char **arc, const char *s, int word, char c)
 {
-	char	**strings;
-	int		i;
-	int		len;
-	int		numwords;
+	int				a;
+	int				b;
+	int				d;
 
-	if (!s)
-		return (NULL);
-	i = 0;
-	numwords = ft_wordcount(s, c);
-	if (!(strings = (char**)ft_memalloc((numwords + 1) * sizeof(char*))))
-		return (NULL);
-	while (numwords--)
+	b = 0;
+	while (word)
 	{
-		while (*s == c && *s)
-			s++;
-		len = ft_wordlen(s, c);
-		if (!(strings[i] = ft_strsub(s, 0, len)))
-			return (NULL);
-		s += len;
-		i++;
+		if (s[b] && s[b] != c)
+			a = b;
+		while (s[b] && s[b++] != c)
+			if (s[b] == '\0' || s[b] == c)
+			{
+				d = b - a;
+				if (!(*arc++ = ft_strsub(s, a, d)))
+					return (NULL);
+			}
+		word--;
 	}
-	strings[i] = NULL;
-	return (strings);
+	return (arc);
+}
+
+char			**ft_strsplit(char const *s, char c)
+{
+	char		**arr;
+	int			word;
+
+	if (!s || !c)
+		return (0);
+	word = ft_wordcount(s, c);
+	if (!(arr = (char**)ft_memalloc(sizeof(char*) * (word + 1))))
+		return (0);
+	word_check(arr, s, word, c);
+	return (arr);
 }
