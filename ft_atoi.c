@@ -6,16 +6,16 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 11:44:45 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/07 00:41:27 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/18 09:33:54 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int					ft_atoi(const char *str)
 {
-	int		sign;
-	int		finish;
+	int				sign;
+	int				finish;
 
 	sign = 1;
 	finish = 0;

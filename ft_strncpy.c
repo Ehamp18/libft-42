@@ -6,15 +6,15 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/17 16:25:01 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/11 18:25:44 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/18 09:27:22 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncpy(char *dst, const char *src, size_t len)
+char				*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	size_t	i;
+	size_t			i;
 
 	i = 0;
 	ft_memset((void*)dst, 0, len);

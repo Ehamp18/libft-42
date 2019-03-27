@@ -6,16 +6,16 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 22:43:28 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/03 17:29:57 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/18 09:31:36 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strstr(const char *hay, const char *need)
+char				*ft_strstr(const char *hay, const char *need)
 {
-	int		size;
-	int		i;
+	int				size;
+	int				i;
 
 	size = ft_strlen(need);
 	if (!*need)

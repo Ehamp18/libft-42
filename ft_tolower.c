@@ -6,13 +6,13 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 19:41:04 by elhampto          #+#    #+#             */
-/*   Updated: 2019/02/25 19:55:06 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/18 09:36:04 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_tolower(int c)
+int					ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (c = c + 32);

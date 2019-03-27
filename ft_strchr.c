@@ -6,13 +6,13 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 14:11:58 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/17 05:26:09 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/18 09:29:44 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strchr(const char *s, int c)
+char				*ft_strchr(const char *s, int c)
 {
 	if (!s || !*s)
 		return (0);
