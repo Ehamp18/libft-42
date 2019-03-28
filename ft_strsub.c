@@ -6,7 +6,7 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 15:03:56 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/17 05:24:31 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/28 14:33:56 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len)
 	char			*sub;
 
 	i = 0;
-	if (!s || !*s)
+	if (!s)
 		return (0);
 	if (!(sub = ft_strnew(len)))
 		return (NULL);

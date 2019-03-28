@@ -6,7 +6,7 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 11:34:39 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/26 20:13:28 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/27 16:15:41 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@ void				ft_striteri(char *s, void (*f)(unsigned int, char *))
 	int				i;
 
 	i = 0;
-	if (!s || !f || !*s)
+	if (!s || !*s)
 		return ;
-	while (s[i])
+	while (*s && f)
 	{
 		f(i, s);
 		i++;
+		s++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 09:41:53 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/18 11:22:09 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/28 14:16:19 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void				ft_memdel(void **ap)
 {
-	if (!ap || !*ap)
-		return ;
-	if (*ap && ap)
-		free(ap);
-	*ap = NULL;
+	if (ap)
+	{
+		free(*ap);
+		*ap = NULL;
+	}
 }

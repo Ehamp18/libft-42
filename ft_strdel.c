@@ -6,7 +6,7 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 09:41:58 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/18 11:23:40 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/28 12:58:42 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 void				ft_strdel(char **as)
 {
-	if (!*as || !as)
+	if (!as)
 		return ;
-	if (*as && as)
-		free(as);
-	*as = NULL;
+	if (*as)
+	{
+		free(*as);
+		*as = NULL;
+	}
 }

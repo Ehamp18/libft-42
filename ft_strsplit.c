@@ -6,7 +6,7 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 17:16:08 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/27 14:40:28 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/28 15:28:53 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,16 @@ static char			**word_check(char **arc, const char *s, int word, char c)
 				d = b - a;
 				if (!(*arc++ = ft_strsub(s, a, d)))
 					return (NULL);
+				word--;
 			}
-		word--;
 	}
 	return (arc);
 }
 
-char			**ft_strsplit(char const *s, char c)
+char				**ft_strsplit(char const *s, char c)
 {
-	char		**arr;
-	int			word;
+	char			**arr;
+	int				word;
 
 	if (!s || !c)
 		return (0);
