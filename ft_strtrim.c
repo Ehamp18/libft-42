@@ -6,7 +6,7 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 17:16:36 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/27 15:13:34 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/29 09:36:43 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ char				*ft_strtrim(char const *s)
 	if (!s)
 		return (NULL);
 	sta = 0;
-	end = (lensi(s) - 1);
-	while (s[sta] == ' ' || s[sta] == '\t' || s[sta] == '\n')
+	end = lensi(s) - 1;
+	while (s[sta] && (s[sta] == ' ' || s[sta] == '\t' || s[sta] == '\n'))
 		sta++;
 	while (end && (s[end] == ' ' || s[end] == '\t' || s[end] == '\n'))
 		end--;
