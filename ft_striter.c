@@ -6,7 +6,7 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 11:34:36 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/18 11:40:38 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/29 10:18:21 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,5 @@ void				ft_striter(char *s, void (*f)(char *))
 		f(s);
 		s++;
 	}
+	return ;
 }
