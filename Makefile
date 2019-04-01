@@ -6,7 +6,7 @@
 #    By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/17 21:05:39 by elhampto          #+#    #+#              #
-#    Updated: 2019/03/31 19:58:53 by elhampto         ###   ########.fr        #
+#    Updated: 2019/03/31 20:03:37 by elhampto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,7 @@ ft_lstmap.c\
 ft_atoc.c\
 ft_is_space.c\
 ft_itoa_base.c\
-ft_wordcount.c
+ft_wordcount.c\
 
 OFI = ft_memset.o\
 ft_bzero.o\
@@ -136,7 +136,7 @@ ft_lstmap.o\
 ft_atoc.o\
 ft_is_space.o\
 ft_itoa_base.o\
-ft_wordcount.o
+ft_wordcount.o\
 
 CG = GCC
 
@@ -145,15 +145,15 @@ FLAGS = -Wall -Werror -Wextra
 all: $(NAME)
 
 $(NAME):
-	@$(CG) $(FLAGS) -c $(SRC)
+	@$(CG) -c $(FLAGS) $(SRC)
 	@ar rc $(NAME) $(OFI)
-	@ranlib $(NAME)
+	ranlib $(NAME)
 
 clean:
-	@rm -f $(OFI)
+	@rm -rf $(OFI)
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -rf $(NAME)
 
 re: fclean all
 .PHONY: all clean fclean re
