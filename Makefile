@@ -48,19 +48,14 @@ all: $(NAME)
 
 $(NAME):
 	@$(CG) $(FLAGS) -c $(SRC) 
-	@echo "\x1b[32mC files made into O files"
 	@ar rc $(NAME) $(OFI)
-	@echo "\x1b[33mO files made into a library"
 	@ranlib $(NAME)
-	@echo "\x1b[34mLibrary is arcived"
 
 clean:
 	@rm -f $(OFI)
-	@echo "\x1b[34mAll O files deleted"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "\x1b[34mThe A file deleted"
 
 re: fclean all
 .PHONY: all clean fclean re
