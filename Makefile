@@ -40,7 +40,7 @@ ft_putnbr_fd.o\
 ft_lstnew.o ft_lstdelone.o ft_lstdel.o ft_lstadd.o ft_lstiter.o ft_lstmap.o\
 ft_atoc.o ft_is_space.o ft_itoa_base.o ft_wordcount.o
 
-CG = GCC
+CG = gcc
 
 FLAGS = -Wall -Werror -Wextra
 
