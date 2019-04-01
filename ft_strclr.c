@@ -6,7 +6,7 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 09:41:59 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/29 10:17:42 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/29 12:55:07 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,4 @@ void				ft_strclr(char *s)
 		return ;
 	if (!(s = ft_memset((void*)s, 0, ft_strlen(s))))
 		return ;
-	return ;
 }

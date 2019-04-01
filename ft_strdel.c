@@ -6,7 +6,7 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 09:41:58 by elhampto          #+#    #+#             */
-/*   Updated: 2019/03/29 10:16:45 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/03/29 12:49:15 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,4 @@ void				ft_strdel(char **as)
 		free(*as);
 		*as = NULL;
 	}
-	return ;
 }
