@@ -6,19 +6,16 @@
 /*   By: elhampto <elhampto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 14:11:58 by elhampto          #+#    #+#             */
-/*   Updated: 2019/04/05 13:00:57 by elhampto         ###   ########.fr       */
+/*   Updated: 2019/04/06 03:52:15 by elhampto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char				*ft_strchr(const char *s, int c)
+char		*ft_strchr(const char *tr, int c)
 {
-	if (!s)
-		return (0);
-	while (*s && *s != c)
-		s++;
-	if (*s == c)
-		return ((char*)s);
-	return (0);
+	while (*tr != (char)c)
+		if (!*tr++)
+			return (0);
+	return ((char *)tr);
 }
